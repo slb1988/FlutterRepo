@@ -6,6 +6,44 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Widget titleSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        children: [
+          Expanded(
+            /*1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /*2*/
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'Oeschinen Lake Campground',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Kandersteg, Switzerland',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          /*3*/
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          Text('41'),
+        ],
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter Layout Demo',
       theme: ThemeData(
@@ -21,14 +59,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter layout demo'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+          appBar: AppBar(
+            title: Text('Flutter layout demo'),
+          ),
+          body: Column(
+            children: <Widget>[
+              titleSection,
+            ],
+          )),
     );
   }
 }
-
