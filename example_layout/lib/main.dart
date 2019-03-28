@@ -6,7 +6,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -90,10 +89,11 @@ class MyApp extends StatelessWidget {
           ),
           body: ListView(
             children: <Widget>[
-              Image.asset('images/lake.jpg',
+              Image.asset(
+                'images/lake.jpg',
                 width: 600,
-                  height: 240,
-                  fit: BoxFit.cover,
+                height: 240,
+                fit: BoxFit.cover,
               ),
               titleSection,
               buttonSection,
@@ -122,5 +122,21 @@ class MyApp extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+//// Adding interactivity
+class FavoriteWidget extends StatefulWidget {
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
   }
 }
